@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+
+    <!-- Demo styles -->
+    <style>
+    body {
+        margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  line-height: 1.5;
+  font-style: bold;
+    }
+    .swiper-container {
+         width: auto;
+  height: auto;
+  color: #000;
+  background: #fff;
+  text-align: center;
+    }
+    .swiper-slide {
+
+/*margin-left: -30px;*/
+height: 100%;
+  opacity: 0.4;
+
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -ms-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+/*  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+*/
+        text-align: center;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-slide-active {
+  top: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/*.swiper-wrapper{
+  width: 550px;
+}*/
+.swiper-slide-visible {
+  opacity: 0.5;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+    .swiper-slide .title {
+      width: 50px;
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 0;
+  line-height: 35px;
+}
+
+.swiper-button-next{background-image:url("imgs/next.png");}
+.swiper-button-prev{background-image:url("imgs/prev.png");}
+
+
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+               <div class="title">Dores(HQ)</div>
+            </div>
+            <div class="swiper-slide"> <div class="title">SucksMan</div></div>
+            <div class="swiper-slide"> <div class="title">KickmyAss</div></div>
+            <div class="swiper-slide"> <div class="title">Fucker</div></div>
+            <div class="swiper-slide"> <div class="title">Shit</div></div>
+            <div class="swiper-slide"> <div class="title">Dores(HQ)</div></div>
+        </div>
+       
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+
+        <div class="swiper-button-prev"></div>
+    </div>
+
+
+  <script src="js/jquery-1.10.1.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="js/swiper-3.3.1.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 3,
+        centeredSlides: true,
+        paginationClickable: true,
+        spaceBetween: 30,
+
+         onSlideChangeEnd: function(swiper){
+      // alert('事件触发了;');
+      //要怎样设置这个回调呢,没有原生的提供,那么要想别的法子了
+  $(".swiper-slide-active").click(function(){
+    alert($(this).html());
+  });
+
+    }
+    });
+
+    </script>
+</body>
+</html>
